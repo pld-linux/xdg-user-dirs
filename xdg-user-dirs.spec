@@ -1,7 +1,7 @@
 Summary:	Handles user special directories
 Name:		xdg-user-dirs
 Version:	0.9
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Libraries
 Source0:	http://user-dirs.freedesktop.org/releases/%{name}-%{version}.tar.gz
@@ -11,6 +11,8 @@ URL:		http://www.freedesktop.org/wiki/Software/xdg-user-dirs
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,6 +39,9 @@ install -d $RPM_BUILD_ROOT%{_sysconfdir}/X11/xinit/xinitrc.d
 	DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/X11/xinit/xinitrc.d/%{name}.sh
+
+[ -d $RPM_BUILD_ROOT%{_datadir}/locale/sr@latin ] || \
+        mv -f $RPM_BUILD_ROOT%{_datadir}/locale/sr@{Latn,latin}
 
 %find_lang %{name}
 

@@ -1,0 +1,11 @@
+diff -urN xdg-user-dirs-0.10/configure.ac xdg-user-dirs-0.10.new/configure.ac
+--- xdg-user-dirs-0.10/configure.ac	2007-08-21 13:32:09.000000000 +0200
++++ xdg-user-dirs-0.10.new/configure.ac	2008-07-09 10:08:25.000000000 +0200
+@@ -16,6 +16,7 @@
+ AM_PROG_MKDIR_P	
+ AM_DISABLE_STATIC
+ AM_ICONV
++AM_PROG_LIBTOOL
+ 
+ GETTEXT_PACKAGE=xdg-user-dirs
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [The gettext domain name])

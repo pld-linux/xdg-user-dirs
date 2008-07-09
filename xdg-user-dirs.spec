@@ -1,16 +1,18 @@
 Summary:	Handles user special directories
 Name:		xdg-user-dirs
 Version:	0.10
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Libraries
 Source0:	http://user-dirs.freedesktop.org/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	6873f49ea7f568743621ed1e05e52dab
 Source1:	%{name}.sh
+Patch0:		%{name}-configure.patch
 URL:		http://www.freedesktop.org/wiki/Software/xdg-user-dirs
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
+BuildRequires:	libtool
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -22,10 +24,12 @@ localization (i.e. translation) of the filenames.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__gettextize}
-%{__aclocal}
+%{__libtoolize}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__automake}
 %configure

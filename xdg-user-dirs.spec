@@ -13,7 +13,6 @@ URL:		http://www.freedesktop.org/wiki/Software/xdg-user-dirs
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	libtool
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -34,7 +33,6 @@ Obsługuje także lokalizację (tzn. tłumaczenia) nazw plików.
 
 %build
 %{__gettextize}
-%{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
 %{__automake}

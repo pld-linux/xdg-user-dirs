@@ -1,4 +1,5 @@
-Summary:	Handles user special directories
+Summary:	Handle user special directories
+Summary(pl.UTF-8):	Obsługa specjalnych katalogów użytkownika
 Name:		xdg-user-dirs
 Version:	0.10
 Release:	3
@@ -21,6 +22,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 xdg-user-dirs is a tool to help manage "well known" user directories
 like the desktop folder and the music folder. It also handles
 localization (i.e. translation) of the filenames.
+
+%description -l pl.UTF-8
+xdg-user-dirs to narzędzie pomagające zarządzać "dobrze znanymi"
+katalogami użytkownika, takimi jak pulpit czy katalog z muzyką.
+Obsługuje także lokalizację (tzn. tłumaczenia) nazw plików.
 
 %prep
 %setup -q

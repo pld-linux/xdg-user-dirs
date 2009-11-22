@@ -1,14 +1,13 @@
 Summary:	Handle user special directories
 Summary(pl.UTF-8):	Obsługa specjalnych katalogów użytkownika
 Name:		xdg-user-dirs
-Version:	0.10
-Release:	3
+Version:	0.12
+Release:	1
 License:	GPL v2
 Group:		Libraries
 Source0:	http://user-dirs.freedesktop.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	6873f49ea7f568743621ed1e05e52dab
+# Source0-md5:	c3a78a12bd02a5dd461c3d49f9abdd18
 Source1:	%{name}.sh
-Patch0:		%{name}-configure.patch
 URL:		http://www.freedesktop.org/wiki/Software/xdg-user-dirs
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -29,7 +28,6 @@ Obsługuje także lokalizację (tzn. tłumaczenia) nazw plików.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__gettextize}

@@ -1,0 +1,11 @@
+--- xdg-user-dirs-0.14/configure.ac.orig	2011-05-03 10:32:05.000000000 +0200
++++ xdg-user-dirs-0.14/configure.ac	2013-01-27 10:39:54.250461746 +0100
+@@ -1,7 +1,7 @@
+ AC_INIT(xdg-user-dirs-update.c)
+ 
+ AM_INIT_AUTOMAKE(xdg-user-dirs, 0.14)
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADERS(config.h)
+ 	
+ AM_SANITY_CHECK
+ AM_MAINTAINER_MODE

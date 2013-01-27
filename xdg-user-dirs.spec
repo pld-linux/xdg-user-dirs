@@ -8,8 +8,9 @@ Group:		Libraries
 Source0:	http://user-dirs.freedesktop.org/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	dc496ecde0e6a1e959bd8a38643f28fd
 Source1:	%{name}.sh
+Patch0:		%{name}-am.patch
 URL:		http://www.freedesktop.org/wiki/Software/xdg-user-dirs
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 # sr@Latn vs. sr@latin
@@ -28,11 +29,13 @@ Obsługuje także lokalizację (tzn. tłumaczenia) nazw plików.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__gettextize}
 %{__aclocal} -I m4
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 %{__make}
@@ -46,8 +49,7 @@ install -d $RPM_BUILD_ROOT%{_sysconfdir}/X11/xinit/xinitrc.d
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/X11/xinit/xinitrc.d/%{name}.sh
 
-[ -d $RPM_BUILD_ROOT%{_datadir}/locale/sr@latin ] || \
-        mv -f $RPM_BUILD_ROOT%{_datadir}/locale/sr@{Latn,latin}
+%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/sr@{Latn,latin}
 
 %find_lang %{name}
 

@@ -1,12 +1,12 @@
 Summary:	Handle user special directories
 Summary(pl.UTF-8):	Obsługa specjalnych katalogów użytkownika
 Name:		xdg-user-dirs
-Version:	0.15
-Release:	2
+Version:	0.16
+Release:	1
 License:	GPL v2
 Group:		Libraries
 Source0:	http://user-dirs.freedesktop.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	f5aaf5686ad7d8809a664bfb4566a54d
+# Source0-md5:	2c0703d02df610c9eaf0c22431bdabae
 Source1:	%{name}.sh
 Patch0:		%{name}-am.patch
 URL:		http://www.freedesktop.org/wiki/Software/xdg-user-dirs
@@ -64,6 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/xdg-user-dirs-update
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/user-dirs.conf
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/user-dirs.defaults
+%{_sysconfdir}/xdg/autostart/xdg-user-dirs.desktop
 %{_mandir}/man1/xdg-user-dir.1*
 %{_mandir}/man1/xdg-user-dirs-update.1*
 %{_mandir}/man5/user-dirs.conf.5*

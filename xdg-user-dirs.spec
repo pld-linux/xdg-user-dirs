@@ -2,7 +2,7 @@ Summary:	Handle user special directories
 Summary(pl.UTF-8):	Obsługa specjalnych katalogów użytkownika
 Name:		xdg-user-dirs
 Version:	0.18
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Libraries
 Source0:	http://user-dirs.freedesktop.org/releases/%{name}-%{version}.tar.gz

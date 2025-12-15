@@ -12,7 +12,10 @@ Patch0:		%{name}-am.patch
 URL:		https://www.freedesktop.org/wiki/Software/xdg-user-dirs
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
+BuildRequires:	docbook-dtd43-xml
+BuildRequires:	docbook-style-xsl-nons
 BuildRequires:	gettext-tools >= 0.14.4
+BuildRequires:	libxslt-progs
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
